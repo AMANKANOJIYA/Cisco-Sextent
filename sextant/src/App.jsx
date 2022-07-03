@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Banner from "./components/Banner";
 import Exhibit from "./components/Exhibit";
+import DisplayAddress from "./components/DisplayAddress";
 
 class App extends Component {
   render() {
@@ -9,9 +10,12 @@ class App extends Component {
       <div className="App">
         <Banner bannerText="Sextant" />
         <div className="Exhibit-views">
-        <Exhibit name="Exhibit : 1"></Exhibit>
-        <Exhibit name="Exhibit : 2"></Exhibit>
-        <Exhibit name="Exhibit : 3"></Exhibit>
+          <Exhibit name="Public IPv4 Address">
+            <DisplayAddress url="https://api.ipify.org?format=json" />
+          </Exhibit>
+          <Exhibit name="Public IPv6 Address">
+            <DisplayAddress url="https://api64.ipify.org?format=json" />
+          </Exhibit>
         </div>
       </div>
     );
